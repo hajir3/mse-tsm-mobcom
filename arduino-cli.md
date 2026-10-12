@@ -3,7 +3,7 @@
 Commands for the Feather nRF52840 Sense, as an alternative to the Arduino IDE. Run them from the repo root.
 
 * Board (FQBN): `adafruit:nrf52:feather52840sense`
-* Port: `/dev/cu.usbmodemXXXX` (macOS), take the real name from `arduino-cli board list`
+* Port: `/dev/cu.usbmodem2101` (macOS), if it changes take the new name from `arduino-cli board list`
 
 ## Daily use
 Find the board and its port:
@@ -16,20 +16,20 @@ Compile a sketch (pass the sketch folder, not the `.ino` file):
 
 Compile and upload:
 
-    arduino-cli compile --fqbn adafruit:nrf52:feather52840sense --upload -p /dev/cu.usbmodemXXXX 05/Arduino/nRF52840Sense_Blink
+    arduino-cli compile --fqbn adafruit:nrf52:feather52840sense --upload -p /dev/cu.usbmodem2101 05/Arduino/nRF52840Sense_Blink
 
 Upload only (after a compile):
 
-    arduino-cli upload --fqbn adafruit:nrf52:feather52840sense -p /dev/cu.usbmodemXXXX 05/Arduino/nRF52840Sense_Blink
+    arduino-cli upload --fqbn adafruit:nrf52:feather52840sense -p /dev/cu.usbmodem2101 05/Arduino/nRF52840Sense_Blink
 
 Serial monitor (baud rate must match `Serial.begin()`, quit with Ctrl+C):
 
-    arduino-cli monitor -p /dev/cu.usbmodemXXXX -c baudrate=115200
+    arduino-cli monitor -p /dev/cu.usbmodem2101 -c baudrate=115200
 
 ## Save board and port per sketch
 Store FQBN and port in the sketch folder (creates `sketch.yaml`), then drop `--fqbn` and `-p`:
 
-    arduino-cli board attach -b adafruit:nrf52:feather52840sense -p /dev/cu.usbmodemXXXX 05/Arduino/nRF52840Sense_Blink
+    arduino-cli board attach -b adafruit:nrf52:feather52840sense -p /dev/cu.usbmodem2101 05/Arduino/nRF52840Sense_Blink
     arduino-cli compile --upload 05/Arduino/nRF52840Sense_Blink
 
 ## Libraries
